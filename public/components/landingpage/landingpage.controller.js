@@ -1,11 +1,14 @@
 (function() {
 	'use strict';
 
-	angular.module('photoApp').controller('landingPageController', Controller);
+	angular.module('photoApp').controller('landingPageController', Controller,['$cookieStore', '$rootScope']);
 
-	function Controller($location, $stateParams, $scope, GetPhotosService, $http) {
+	function Controller($location, $stateParams, $scope,$state,$cookieStore, $rootScope, GetPhotosService, $http) {
 		var vm = $scope;
-		$scope.pageClass = 'Page-landing';
+		vm.goToProfilePage=goToProfilePage;
+		vm.getDetails=getDetails;
+    $scope.pageClass = 'Page-landing';
+
 		initController();
 		function initController() {
 			var id = $stateParams.id;
@@ -21,7 +24,7 @@
 
 		function getPhotos(id) {
 			console.log("State Params" + id);
-			setTimeout(function() {
+		
 				GetPhotosService.getPhotos(id, function(result) {
 					if (result) {
 						console.log(result.data);
@@ -31,6 +34,13 @@
 
 					}
 				});
+		};
+		
+		function goToProfilePage(){
+			var id=$cookieStore.get('globals').currentUser.username;
+			$state.transitionTo('profilepage',{id:id});
+		
+	};
 			}, 3000);
 		}
 		;
@@ -114,5 +124,11 @@
 			$("#previewModal").addClass('modal-open');
 			//	$(".modal-backdrop").removeClass();*/
     });
+		};
+		function getDetails(id) {
+			console.log("Inside getDetails" + id);
+	    $state.transitionTo('image_details',{id:id});
+
+		};
 	}
 })();

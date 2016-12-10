@@ -97,7 +97,8 @@ photoApp
 								views : {
 
 									'header' : {
-										templateUrl : '/components/landingpage/header.html'
+										templateUrl : '/components/landingpage/header.html',
+										controller : 'landingPageController'
 
 									},
 
@@ -111,7 +112,56 @@ photoApp
 									}
 								}
 
-							});
+<<<<<<< Updated upstream
+							}).state(
+									'profilepage',
+									{
+										url : '/profilepage/:id',
+										views : {
+
+											'header' : {
+												templateUrl : '/components/landingpage/header.html',
+													controller : 'landingPageController'
+=======
+							})
+
+							.state(
+									'image_details',
+									{
+										url : '/details/:id',
+										views : {
+
+											'header' : {
+												templateUrl : '/components/landingpage/header.html'
+>>>>>>> Stashed changes
+
+											},
+
+											'content' : {
+<<<<<<< Updated upstream
+												templateUrl : '/components/profilepage/profilepage.content.html',
+												controller : 'profilePageController'
+
+											},
+=======
+												templateUrl : '/components/image_details/details.html',
+												controller : 'detailsController'
+
+											},
+
+>>>>>>> Stashed changes
+											'footer' : {
+												templateUrl : '/shared/footer/footer.html'
+											}
+										}
+<<<<<<< Updated upstream
+
+									});
+							
+=======
+								});
+
+>>>>>>> Stashed changes
 
 		});
 

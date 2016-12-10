@@ -14,16 +14,16 @@ html, body {
     left: 0;
 }
 
-.Page-l {
+.Page-landing {
 
    float: left;
     clear:left;
-    position: fixed;
+ 	position:absolute;
     top:71px;
-    bottom:30px;
+    bottom:200px;
     height: 100%;
     width: 100%;
-
+    z-index:-1;
     overflow: auto;
 
 }

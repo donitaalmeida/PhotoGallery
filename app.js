@@ -49,11 +49,18 @@ if ('development' == app.get('env')) {
 }
 app.get('/',routes.index);
 app.get('/api/getPhotos/:id', photos.getPhotos);
+<<<<<<< Updated upstream
+app.get('/api/getProfileDetails/:id', user.getProfileDetails);
+app.post('/api/editProfileDetails', user.editProfileDetails);
+=======
+app.get('/api/getImageDetails/:id',photos.getImageDetails);
+>>>>>>> Stashed changes
 app.get('/users', user.list);
 app.get('/aws', aws.uploadImage);
 app.post('/api/register',registration.register);
 app.post('/api/authentication',authentication.authenticate);
 //app.
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
