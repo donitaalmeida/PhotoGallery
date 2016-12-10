@@ -14,7 +14,7 @@ html, body {
     left: 0;
 }
 
-.content {
+.Page-landing {
 
    float: left;
     clear:left;
@@ -23,12 +23,7 @@ html, body {
     bottom:200px;
     height: 100%;
     width: 100%;
-<<<<<<< Updated upstream
-    z-index:0;
-=======
     z-index:-1;
-
->>>>>>> Stashed changes
     overflow: auto;
 
 }
