@@ -14,8 +14,8 @@ html, body {
     left: 0;
 }
 
-.content {
-   
+.Page-l {
+
    float: left;
     clear:left;
     position: fixed;
@@ -23,7 +23,7 @@ html, body {
     bottom:30px;
     height: 100%;
     width: 100%;
-    
+
     overflow: auto;
 
 }

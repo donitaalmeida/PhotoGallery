@@ -13,11 +13,12 @@ var express = require('express')
   , path = require('path')
   , session = require('express-session')
   , redisStore = require('connect-redis')(session)
-  , redis   = require("redis");
+  , redis   = require("redis")
+  , aws = require('./aws-upload/upload');
 
 
   var client  = redis.createClient();
-  
+
 
 var app = express();
 
@@ -49,6 +50,7 @@ if ('development' == app.get('env')) {
 app.get('/',routes.index);
 app.get('/api/getPhotos/:id', photos.getPhotos);
 app.get('/users', user.list);
+app.get('/aws', aws.uploadImage);
 app.post('/api/register',registration.register);
 app.post('/api/authentication',authentication.authenticate);
 //app.

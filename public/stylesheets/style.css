@@ -8,8 +8,8 @@ a {
 }
 
 .search{
-  	border-right:0; 
-	box-shadow:0 0 0; 
+  	border-right:0;
+	box-shadow:0 0 0;
 	border-color:#ccc;
   }
 
@@ -63,4 +63,32 @@ a {
 }
 #profileheader{
 	margin-bottom:0px;
+}
+
+.btn-circle.btn-lg {
+  background-color: orange;
+  border-radius: 30px;
+  position: fixed;
+  right: 0px;
+  bottom: 30px;
+}
+
+#Upload {
+  display: none;
+}
+
+#uploadButton:hover {
+  background-color: red;
+}
+
+#uploadButton:focus {
+  outline: none;
+}
+
+.tableData {
+  display: inline;
+}
+
+.tokenfield {
+  overflow: auto;
 }
